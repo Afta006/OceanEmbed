@@ -9,18 +9,26 @@ const ICONS = { Satellite, Layers, Ruler, Cpu, CheckCircle2 };
 export default function PipelineSection() {
   const [activeStep, setActiveStep] = useState(null);
 
+  const handleToggleStep = (step) => {
+    setActiveStep((current) => (current?.n === step.n ? null : step));
+  };
+
   return (
     <div id="pipeline" className="px-6 md:px-12 py-10 max-w-6xl mx-auto">
       <div className="text-[11px] uppercase tracking-widest mb-4" style={{ color: C.dim }}>Pipeline</div>
       <div className="grid md:grid-cols-5 gap-3">
         {PIPELINE.map((p) => {
           const Icon = ICONS[p.icon];
+          const isOpen = activeStep?.n === p.n;
+
           return (
             <button
               key={p.n}
-              onClick={() => setActiveStep(p)}
+              type="button"
+              aria-expanded={isOpen}
+              onClick={() => handleToggleStep(p)}
               className="oe-card rounded-xl p-4 text-left cursor-pointer"
-              style={{ background: C.bgCard, border: `1px solid ${C.border}` }}
+              style={{ background: C.bgCard, border: `1px solid ${isOpen ? C.teal : C.border}` }}
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-[10px]" style={{ color: C.dim, fontFamily: "'IBM Plex Mono', monospace" }}>{p.n}</span>

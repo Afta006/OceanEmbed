@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { X } from "lucide-react";
 import { C } from "../theme";
+import { createPortal } from "react-dom";
 
 export default function Modal({ open, onClose, title, icon, children }) {
   useEffect(() => {
@@ -16,7 +17,7 @@ export default function Modal({ open, onClose, title, icon, children }) {
 
   if (!open) return null;
 
-  return (
+  return createPortal(
     <div
       onClick={onClose}
       role="dialog"
@@ -60,6 +61,7 @@ export default function Modal({ open, onClose, title, icon, children }) {
         </div>
         {children}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
