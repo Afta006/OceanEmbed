@@ -238,7 +238,7 @@ export default function ResultsSection() {
     }}
   >
     Error peaks around the{" "}
-    <strong style={{ color: C.text }}>thermocline (roughly 50–100&nbsp;m)</strong>,
+    <strong style={{ color: C.text }}>thermocline (roughly 75–150&nbsp;m)</strong>,
     where surface signals carry the least information about the{" "}
     <strong style={{ color: C.text }}>sharp vertical gradient</strong>{" "}
     beneath and eases again in the{" "}
