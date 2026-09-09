@@ -16,8 +16,8 @@ export default function PipelineSection() {
   return (
     <div id="pipeline" className="px-6 md:px-12 py-10 max-w-6xl mx-auto">
       <div className="text-[11px] uppercase tracking-widest mb-4" style={{ color: C.dim }}>Pipeline</div>
-      <div className="grid md:grid-cols-5 gap-3">
-        {PIPELINE.map((p) => {
+      <div className="grid md:grid-cols-5 gap-4">
+        {PIPELINE.map((p, i) => {
           const Icon = ICONS[p.icon];
           const isOpen = activeStep?.n === p.n;
 
@@ -27,15 +27,51 @@ export default function PipelineSection() {
               type="button"
               aria-expanded={isOpen}
               onClick={() => handleToggleStep(p)}
-              className="oe-card rounded-xl p-4 text-left cursor-pointer"
-              style={{ background: C.bgCard, border: `1px solid ${isOpen ? C.teal : C.border}` }}
+              className="oe-card oe-card-enter rounded-xl p-6 text-left cursor-pointer relative overflow-hidden"
+              style={{
+                background: C.bgCard,
+                border: `1px solid ${isOpen ? C.teal : C.border}`,
+                animationDelay: `${i * 0.08}s`,
+              }}
             >
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[10px]" style={{ color: C.dim, fontFamily: "'IBM Plex Mono', monospace" }}>{p.n}</span>
-                <Icon size={16} color={C.teal} />
+              {/* Accent top bar — signals importance/order */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "3px",
+                  background: C.teal,
+                  opacity: isOpen ? 1 : 0.55,
+                }}
+              />
+
+              <div className="flex items-center justify-between mb-4">
+                <span
+                  className="text-[11px] font-semibold"
+                  style={{ color: C.teal, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: "0.05em" }}
+                >
+                  {p.n}
+                </span>
+                <span className="oe-card-icon" style={{ display: "inline-flex" }}>
+                  <Icon size={22} color={C.teal} />
+                </span>
               </div>
-              <div className="oe-display text-sm mb-1">{p.title}</div>
-              <div className="text-[11px] leading-snug" style={{ color: C.dim }}>{p.desc}</div>
+
+              <div
+                className="oe-display text-lg font-bold mb-2"
+                style={{ color: C.text, letterSpacing: "-0.01em" }}
+              >
+                {p.title}
+              </div>
+
+              <div
+                className="text-[13px]"
+                style={{ color: C.text, opacity: 0.85, lineHeight: 1.6 }}
+              >
+                {p.desc}
+              </div>
             </button>
           );
         })}

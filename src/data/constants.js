@@ -4,6 +4,7 @@ export const DATE_MIN = "2023-01-01";
 export const DATE_MAX = "2023-04-30";
 
 export const NAV_LINKS = [
+  { id: "problem", label: "The Problem" },
   { id: "pipeline", label: "Pipeline" },
   { id: "results", label: "Results" },
   { id: "live-demo", label: "Live Demo" },

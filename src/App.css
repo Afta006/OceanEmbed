@@ -220,3 +220,47 @@
 .oe-footer-link:hover {
   color: #3fa9a0;
 }
+
+.oe-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.oe-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(63, 169, 160, 0.18);
+}
+
+.oe-card-icon {
+  transition: transform 0.25s ease;
+}
+
+.oe-card:hover .oe-card-icon {
+  transform: scale(1.15);
+}
+
+@keyframes oe-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.oe-card-enter {
+  opacity: 0;
+  animation: oe-card-in 0.5s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oe-card,
+  .oe-card-icon,
+  .oe-card-enter {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
