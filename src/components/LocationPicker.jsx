@@ -121,6 +121,7 @@ export default function LocationPicker({ lat, lon, onPick }) {
     borderRadius: 10,
     overflow: "hidden",
     border: "1px solid #1C3A52",
+    isolation: "isolate",
   }}
 >
         <MapContainer
