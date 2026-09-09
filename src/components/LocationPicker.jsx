@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Rectangle, Marker, useMapEvents, useMap } from
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { BOUNDS } from "../data/constants";
+import { C } from "../theme";
 
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
@@ -64,9 +65,9 @@ function FullscreenButton() {
         width: 34,
         height: 34,
         borderRadius: 6,
-        border: "1px solid #1C3A52",
-        background: "#0F2438",
-        color: "#EAF4F4",
+        border: `1px solid ${C.border}`,
+        background: C.bgCard,
+        color: C.text,
         cursor: "pointer",
         fontSize: 18,
         display: "flex",
@@ -116,14 +117,14 @@ export default function LocationPicker({ lat, lon, onPick }) {
   return (
     <div>
       <div
-  style={{
-    position: "relative",
-    borderRadius: 10,
-    overflow: "hidden",
-    border: "1px solid #1C3A52",
-    isolation: "isolate",
-  }}
->
+        style={{
+          position: "relative",
+          borderRadius: 10,
+          overflow: "hidden",
+          border: "1px solid #1C3A52",
+          isolation: "isolate",
+        }}
+      >
         <MapContainer
           center={center}
           zoom={6}
@@ -143,42 +144,50 @@ export default function LocationPicker({ lat, lon, onPick }) {
         </MapContainer>
       </div>
       <div className="flex gap-2 mt-3">
-        <button onClick={() => onPick(12.2, 81.5)} className="oe-pill text-xs px-3 py-1.5 rounded-full" style={{ background: "#0F2438", color: "#EAF4F4", border: "1px solid #1C3A52" }}>
+        <button
+          onClick={() => onPick(12.2, 81.5)}
+          className="oe-pill text-xs px-3 py-1.5 rounded-full"
+          style={{ background: C.bgCard, color: C.text, border: `1px solid ${C.border}` }}
+        >
           Near coast
         </button>
-        <button onClick={() => onPick(13.4, 84.2)} className="oe-pill text-xs px-3 py-1.5 rounded-full" style={{ background: "#0F2438", color: "#EAF4F4", border: "1px solid #1C3A52" }}>
+        <button
+          onClick={() => onPick(13.4, 84.2)}
+          className="oe-pill text-xs px-3 py-1.5 rounded-full"
+          style={{ background: C.bgCard, color: C.text, border: `1px solid ${C.border}` }}
+        >
           Open ocean
         </button>
         <form onSubmit={handleManualSubmit} className="mt-3">
-        <div className="text-[11px] mb-1.5" style={{ color: "#7FA3B5" }}>Or enter coordinates manually</div>
-        <div className="flex gap-2 items-start">
-          <input
-            type="number"
-            step="0.01"
-            inputMode="decimal"
-            placeholder="Lat"
-            value={latInput}
-            onChange={(e) => setLatInput(e.target.value)}
-            className="text-xs px-2.5 py-1.5 rounded-lg flex-1 min-w-0"
-            style={{ background: "#0F2438", color: "#EAF4F4", border: "1px solid #1C3A52" }}
-            aria-label="Latitude"
-          />
-          <input
-            type="number"
-            step="0.01"
-            inputMode="decimal"
-            placeholder="Lon"
-            value={lonInput}
-            onChange={(e) => setLonInput(e.target.value)}
-            className="text-xs px-2.5 py-1.5 rounded-lg flex-1 min-w-0"
-            style={{ background: "#0F2438", color: "#EAF4F4", border: "1px solid #1C3A52" }}
-            aria-label="Longitude"
-          />
-        </div>
-        {coordError && (
-          <div className="text-[11px] mt-1.5" style={{ color: "#E07856" }}>{coordError}</div>
-        )}
-      </form>
+          <div className="text-[11px] mb-1.5" style={{ color: C.dim }}>Or enter coordinates manually</div>
+          <div className="flex gap-2 items-start">
+            <input
+              type="number"
+              step="0.01"
+              inputMode="decimal"
+              placeholder="Lat"
+              value={latInput}
+              onChange={(e) => setLatInput(e.target.value)}
+              className="text-xs px-2.5 py-1.5 rounded-lg flex-1 min-w-0"
+              style={{ background: C.bgCard, color: C.text, border: `1px solid ${C.border}` }}
+              aria-label="Latitude"
+            />
+            <input
+              type="number"
+              step="0.01"
+              inputMode="decimal"
+              placeholder="Lon"
+              value={lonInput}
+              onChange={(e) => setLonInput(e.target.value)}
+              className="text-xs px-2.5 py-1.5 rounded-lg flex-1 min-w-0"
+              style={{ background: C.bgCard, color: C.text, border: `1px solid ${C.border}` }}
+              aria-label="Longitude"
+            />
+          </div>
+          {coordError && (
+            <div className="text-[11px] mt-1.5" style={{ color: C.coral }}>{coordError}</div>
+          )}
+        </form>
       </div>
     </div>
   );
