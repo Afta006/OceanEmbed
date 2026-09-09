@@ -41,7 +41,7 @@ export default function ProblemSection() {
           className="text-sm md:text-base leading-7 max-w-3xl"
           style={{ color: C.dim }}
         >
-          Satellites continuously observe the ocean surface at basin scale —
+          Satellites continuously observe the ocean surface at basin scale
           measuring sea-surface temperature, salinity, height, currents and
           winds. But the temperature that drives circulation, marine heatwaves
           and fisheries exists below the surface, where direct observations
