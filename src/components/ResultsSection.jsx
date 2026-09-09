@@ -231,7 +231,7 @@ export default function ResultsSection() {
           {/* Description */}
 <div className="mt-6 flex justify-center px-4">
   <p
-    className="text-base md:text-lg leading-8 text-center max-w-4xl"
+    className="text-base md:text-md leading-8 text-center max-w-4xl"
     style={{
       color: C.dim,
       textAlign: "center",
