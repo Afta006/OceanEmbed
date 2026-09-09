@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { Satellite, Layers, Ruler, Cpu, CheckCircle2 } from "lucide-react";
 import { C } from "../theme";
 import { PIPELINE } from "../data/constants";
 import Modal from "./Modal";
-
-const ICONS = { Satellite, Layers, Ruler, Cpu, CheckCircle2 };
 
 export default function PipelineSection() {
   const [activeStep, setActiveStep] = useState(null);
@@ -34,7 +31,6 @@ export default function PipelineSection() {
 
       <div className="grid md:grid-cols-5 gap-4">
         {PIPELINE.map((p, i) => {
-          const Icon = ICONS[p.icon];
           const isOpen = activeStep?.n === p.n;
 
           return (
@@ -63,7 +59,7 @@ export default function PipelineSection() {
                 }}
               />
 
-              {/* Step number only — card icon removed */}
+              {/* Step number only */}
               <div className="flex items-center mb-4">
                 <span
                   className="text-[11px] font-semibold"
@@ -105,13 +101,23 @@ export default function PipelineSection() {
       <Modal
         open={!!activeStep}
         onClose={() => setActiveStep(null)}
-        title={activeStep?.title}
-        icon={
-          activeStep &&
-          (() => {
-            const Icon = ICONS[activeStep.icon];
-            return <Icon size={20} color={C.teal} />;
-          })()
+        title={
+          activeStep && (
+            <div className="flex items-center gap-3">
+              <span
+                className="text-[12px] font-semibold"
+                style={{
+                  color: C.teal,
+                  fontFamily: "'IBM Plex Mono', monospace",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                {activeStep.n}
+              </span>
+
+              <span>{activeStep.title}</span>
+            </div>
+          )
         }
       >
         {activeStep && (
@@ -122,7 +128,15 @@ export default function PipelineSection() {
                 className="text-sm leading-relaxed flex gap-2.5"
                 style={{ color: C.dim }}
               >
-                <span style={{ color: C.teal, flexShrink: 0 }}>—</span>
+                <span
+                  style={{
+                    color: C.teal,
+                    flexShrink: 0,
+                  }}
+                >
+                  —
+                </span>
+
                 <span>{line}</span>
               </li>
             ))}
