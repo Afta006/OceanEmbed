@@ -125,13 +125,6 @@ export default function LocationPicker({ lat, lon, onPick }) {
             style={{ background: "#0F2438", color: "#EAF4F4", border: "1px solid #1C3A52" }}
             aria-label="Longitude"
           />
-          <button
-            type="submit"
-            className="oe-pill text-xs px-3 py-1.5 rounded-full shrink-0"
-            style={{ background: "#3FA9A0", color: "#04141C", border: "1px solid #3FA9A0", fontWeight: 600 }}
-          >
-            Go
-          </button>
         </div>
         {coordError && (
           <div className="text-[11px] mt-1.5" style={{ color: "#E07856" }}>{coordError}</div>
