@@ -16,21 +16,22 @@ export default function PipelineSection() {
   return (
     <div id="pipeline" className="px-6 md:px-12 py-10 max-w-6xl mx-auto">
       <div className="flex items-center gap-3 mb-6">
-  <div
-    style={{
-      width: "32px",
-      height: "1px",
-      background: C.teal,
-    }}
-  />
+        <div
+          style={{
+            width: "32px",
+            height: "1px",
+            background: C.teal,
+          }}
+        />
 
-  <div
-    className="text-[11px] uppercase tracking-[0.25em]"
-    style={{ color: C.teal }}
-  >
-    Pipeline
-  </div>
-</div>
+        <div
+          className="text-[11px] uppercase tracking-[0.25em]"
+          style={{ color: C.teal }}
+        >
+          Pipeline
+        </div>
+      </div>
+
       <div className="grid md:grid-cols-5 gap-4">
         {PIPELINE.map((p, i) => {
           const Icon = ICONS[p.icon];
@@ -62,28 +63,37 @@ export default function PipelineSection() {
                 }}
               />
 
-              <div className="flex items-center justify-between mb-4">
+              {/* Step number only — card icon removed */}
+              <div className="flex items-center mb-4">
                 <span
                   className="text-[11px] font-semibold"
-                  style={{ color: C.teal, fontFamily: "'IBM Plex Mono', monospace", letterSpacing: "0.05em" }}
+                  style={{
+                    color: C.teal,
+                    fontFamily: "'IBM Plex Mono', monospace",
+                    letterSpacing: "0.05em",
+                  }}
                 >
                   {p.n}
-                </span>
-                <span className="oe-card-icon" style={{ display: "inline-flex" }}>
-                  <Icon size={22} color={C.teal} />
                 </span>
               </div>
 
               <div
                 className="oe-display text-lg font-bold mb-2"
-                style={{ color: C.text, letterSpacing: "-0.01em" }}
+                style={{
+                  color: C.text,
+                  letterSpacing: "-0.01em",
+                }}
               >
                 {p.title}
               </div>
 
               <div
                 className="text-[13px]"
-                style={{ color: C.text, opacity: 0.85, lineHeight: 1.6 }}
+                style={{
+                  color: C.text,
+                  opacity: 0.85,
+                  lineHeight: 1.6,
+                }}
               >
                 {p.desc}
               </div>
@@ -96,15 +106,22 @@ export default function PipelineSection() {
         open={!!activeStep}
         onClose={() => setActiveStep(null)}
         title={activeStep?.title}
-        icon={activeStep && (() => {
-          const Icon = ICONS[activeStep.icon];
-          return <Icon size={20} color={C.teal} />;
-        })()}
+        icon={
+          activeStep &&
+          (() => {
+            const Icon = ICONS[activeStep.icon];
+            return <Icon size={20} color={C.teal} />;
+          })()
+        }
       >
         {activeStep && (
           <ul className="space-y-2.5">
             {activeStep.details.map((line, i) => (
-              <li key={i} className="text-sm leading-relaxed flex gap-2.5" style={{ color: C.dim }}>
+              <li
+                key={i}
+                className="text-sm leading-relaxed flex gap-2.5"
+                style={{ color: C.dim }}
+              >
                 <span style={{ color: C.teal, flexShrink: 0 }}>—</span>
                 <span>{line}</span>
               </li>

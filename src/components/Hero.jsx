@@ -11,7 +11,7 @@ export default function Hero({ scrollTo }) {
           className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest px-3 py-1 rounded-full mb-6"
           style={{ background: C.tealSoft, color: C.teal }}
         >
-          <Satellite size={12} /> Satellite Embedding · Deep Learning
+                Satellite Embedding · Deep Learning
         </div>
         <h1 className="oe-display text-4xl md:text-5xl leading-tight mb-5">
           Reconstructing the ocean<br />you can't see from space.
