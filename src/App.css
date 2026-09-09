@@ -182,3 +182,30 @@
     border-right-color: var(--border);
   }
 }
+
+.oe-theme-toggle {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9999px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.oe-theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--oe-teal) !important;
+}
+
+.oe-theme-toggle:active {
+  transform: translateY(0);
+}
