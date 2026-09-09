@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Rectangle, Marker, useMapEvents } from "react-leaflet";
+import { MapContainer, TileLayer, Rectangle, Marker, useMapEvents, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { BOUNDS } from "../data/constants";
@@ -39,6 +39,46 @@ function RecenterOnPick({ lat, lon }) {
   return null;
 }
 
+function FullscreenButton() {
+  const map = useMap();
+
+  const toggleFullscreen = () => {
+    const mapContainer = map.getContainer();
+
+    if (!document.fullscreenElement) {
+      mapContainer.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  };
+
+  return (
+    <button
+      onClick={toggleFullscreen}
+      title="Fullscreen"
+      style={{
+        position: "absolute",
+        top: 10,
+        right: 10,
+        zIndex: 1000,
+        width: 34,
+        height: 34,
+        borderRadius: 6,
+        border: "1px solid #1C3A52",
+        background: "#0F2438",
+        color: "#EAF4F4",
+        cursor: "pointer",
+        fontSize: 18,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      ⛶
+    </button>
+  );
+}
+
 export default function LocationPicker({ lat, lon, onPick }) {
   const center = [(BOUNDS.latMin + BOUNDS.latMax) / 2, (BOUNDS.lonMin + BOUNDS.lonMax) / 2];
   const [latInput, setLatInput] = useState(String(lat));
@@ -75,7 +115,14 @@ export default function LocationPicker({ lat, lon, onPick }) {
 
   return (
     <div>
-      <div style={{ borderRadius: 10, overflow: "hidden", border: "1px solid #1C3A52" }}>
+      <div
+  style={{
+    position: "relative",
+    borderRadius: 10,
+    overflow: "hidden",
+    border: "1px solid #1C3A52",
+  }}
+>
         <MapContainer
           center={center}
           zoom={6}
@@ -87,6 +134,7 @@ export default function LocationPicker({ lat, lon, onPick }) {
           attributionControl={false}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          <FullscreenButton />
           <Rectangle bounds={rectBounds} pathOptions={{ color: "#3FA9A0", weight: 1, fillOpacity: 0.04 }} />
           <Marker position={[lat, lon]} />
           <ClickHandler onPick={onPick} />
