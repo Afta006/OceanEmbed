@@ -235,7 +235,7 @@ export default function ResultsSection() {
           >
             Error peaks around the thermocline (roughly 50–100&nbsp;m),
             where surface signals carry the least information about the
-            sharp vertical gradient beneath — and eases again in the
+            sharp vertical gradient beneath and eases again in the
             stable deep water.
           </p>
         </>
