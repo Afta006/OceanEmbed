@@ -33,7 +33,7 @@ export default function ProblemSection() {
           We can see the ocean surface.
           <br />
           <span style={{ color: C.teal }}>
-            But what lies beneath?
+            But what lies beneath? 
           </span>
         </h2>
 
