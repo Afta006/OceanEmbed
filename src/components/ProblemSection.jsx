@@ -251,16 +251,22 @@ export default function ProblemSection() {
       </div>
 
       {/* Bottom Statement */}
-      <div className="mt-8 text-center">
-        <p
-          className="text-sm md:text-base"
-          style={{ color: C.dim }}
-        >
-          Trained against{" "}
-          <span style={{ color: C.text }}>GLORYS</span> and validated against{" "}
-          <span style={{ color: C.text }}>independent ARGO observations.</span>
-        </p>
-      </div>
+<div className="mt-10 text-center px-4">
+  <p
+    className="text-base md:text-lg leading-8 max-w-4xl mx-auto"
+    style={{
+      color: C.dim,
+      textAlign: "center",
+    }}
+  >
+    Trained against{" "}
+    <span style={{ color: C.text, fontWeight: 600 }}>GLORYS</span>{" "}
+    and validated against{" "}
+    <span style={{ color: C.text, fontWeight: 600 }}>
+      independent ARGO observations.
+    </span>
+  </p>
+</div>
     </section>
   );
 }

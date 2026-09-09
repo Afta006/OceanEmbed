@@ -229,15 +229,22 @@ export default function ResultsSection() {
           </div>
 
           {/* Description */}
-          <p
-            className="text-xs leading-relaxed mt-4 max-w-2xl"
-            style={{ color: C.dim }}
-          >
-            Error peaks around the thermocline (roughly 50–100&nbsp;m),
-            where surface signals carry the least information about the
-            sharp vertical gradient beneath and eases again in the
-            stable deep water.
-          </p>
+<div className="mt-6 flex justify-center px-4">
+  <p
+    className="text-base md:text-lg leading-8 text-center max-w-4xl"
+    style={{
+      color: C.dim,
+      textAlign: "center",
+    }}
+  >
+    Error peaks around the{" "}
+    <strong style={{ color: C.text }}>thermocline (roughly 50–100&nbsp;m)</strong>,
+    where surface signals carry the least information about the{" "}
+    <strong style={{ color: C.text }}>sharp vertical gradient</strong>{" "}
+    beneath and eases again in the{" "}
+    <strong style={{ color: C.text }}>stable deep water</strong>.
+  </p>
+</div>
         </>
       )}
     </div>
