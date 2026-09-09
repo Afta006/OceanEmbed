@@ -15,7 +15,22 @@ export default function PipelineSection() {
 
   return (
     <div id="pipeline" className="px-6 md:px-12 py-10 max-w-6xl mx-auto">
-      <div className="text-[11px] uppercase tracking-widest mb-4" style={{ color: C.dim }}>Pipeline</div>
+      <div className="flex items-center gap-3 mb-6">
+  <div
+    style={{
+      width: "32px",
+      height: "1px",
+      background: C.teal,
+    }}
+  />
+
+  <div
+    className="text-[11px] uppercase tracking-[0.25em]"
+    style={{ color: C.teal }}
+  >
+    Pipeline
+  </div>
+</div>
       <div className="grid md:grid-cols-5 gap-4">
         {PIPELINE.map((p, i) => {
           const Icon = ICONS[p.icon];

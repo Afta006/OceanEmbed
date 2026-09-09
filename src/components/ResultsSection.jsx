@@ -34,12 +34,22 @@ export default function ResultsSection() {
       id="results"
       className="px-6 md:px-12 py-10 max-w-6xl mx-auto"
     >
-      <div
-        className="text-[11px] uppercase tracking-widest mb-4"
-        style={{ color: C.dim }}
-      >
-        Validation results
-      </div>
+      <div className="flex items-center gap-3 mb-6">
+  <div
+    style={{
+      width: "32px",
+      height: "1px",
+      background: C.teal,
+    }}
+  />
+
+  <div
+    className="text-[11px] uppercase tracking-[0.25em]"
+    style={{ color: C.teal }}
+  >
+    Validation Results
+  </div>
+</div>
 
       {/* Loading */}
       {loading && (
