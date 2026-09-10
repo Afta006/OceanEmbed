@@ -26,7 +26,7 @@ export default function Navbar({ navOpen, setNavOpen, scrollTo }) {
         {/* LOGO */}
         <div className="flex items-center gap-2 oe-display font-semibold">
           <img
-            src={mode === "dark" ? "/logo2.png" : "/logo.png"}
+            src={mode === "dark" ? "/image_2026-09-10_175751338-removebg-preview.png" : "/image_2026-09-10_175751338-removebg-preview.png"}
             alt="OceanEmbed"
             className="w-9 h-9 object-contain"
           />
