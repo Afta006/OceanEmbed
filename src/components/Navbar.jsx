@@ -1,4 +1,4 @@
-import { Waves, Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { C } from "../theme";
 import { NAV_LINKS } from "../data/constants";
 import { useState } from "react";
@@ -23,13 +23,20 @@ export default function Navbar({ navOpen, setNavOpen, scrollTo }) {
           borderBottom: `1px solid ${C.border}`,
         }}
       >
+        {/* LOGO */}
         <div className="flex items-center gap-2 oe-display font-semibold">
-          <Waves size={18} color={C.teal} />
-          OceanEmbed
+          <img
+            src={mode === "dark" ? "/logo2.png" : "/logo.png"}
+            alt="OceanEmbed"
+            className="w-9 h-9 object-contain"
+          />
+
+          <span>OceanEmbed</span>
         </div>
 
         <div className="flex items-center gap-3">
 
+          {/* NAVIGATION LINKS */}
           <div
             className="hidden md:flex gap-6 text-sm"
             style={{ color: C.dim }}
@@ -70,6 +77,7 @@ export default function Navbar({ navOpen, setNavOpen, scrollTo }) {
             )}
           </button>
 
+          {/* MOBILE MENU BUTTON */}
           <button
             className="md:hidden"
             onClick={() => setNavOpen(!navOpen)}
@@ -81,6 +89,7 @@ export default function Navbar({ navOpen, setNavOpen, scrollTo }) {
         </div>
       </div>
 
+      {/* MOBILE NAVIGATION */}
       {navOpen && (
         <div
           className="md:hidden flex flex-col"
