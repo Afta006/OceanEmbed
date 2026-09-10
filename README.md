@@ -6,11 +6,11 @@
 
 ## 1. Project Information
 
-- **Project Title:** OceanEmbed – Satellite Embedding-Based Deep Learning for Subsurface Ocean Temperature Reconstruction
-- **PS ID:** [ENTER OFFICIAL PS ID]
-- **PS Title:** [ENTER OFFICIAL PS TITLE]
+- **Project Title:** OceanEmbed - Satellite Embedding-Based Deep Learning Framework for Reconstruction of Subsurface Ocean Temperature from Surface Satellite Observations
+- **PS ID:** SIH26066
+- **PS Title:** OceanEmbed - Satellite Embedding-Based Deep Learning Framework for Reconstruction of Subsurface Ocean Temperature from Surface Satellite Observations.
 - **Category:** Software
-- **Theme:** [ENTER OFFICIAL SIH THEME]
+- **Theme:** Disaster Management
 
 ---
 
