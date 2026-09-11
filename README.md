@@ -381,8 +381,8 @@ Potential applications include:
 
 | Team Member | Role |
 |---|---|
+| **Vanshika Goyal (Team Leader)** | Machine Learning / PPT / Video Voiceover |
 | **MD Aftab Ansari** | Machine Learning / Frontend Development |
-| **Vanshika Goyal** | Machine Learning / PPT / Video Voiceover |
 | **Anam Shoeb** | Frontend Development / PPT / Video Editing |
 | **Varidhi Solanki** | Frontend Development |
 | **Bhanwi Singh** | PPT |
