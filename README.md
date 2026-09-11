@@ -8,18 +8,19 @@ It addresses the problem of sparse subsurface ocean observations by combining sa
 
 ---
 
-## SIH 2026
+## Smart India Hackathon 2026
 
 | Field | Details |
 |---|---|
 | **PS ID** | SIH26066 |
 | **Theme** | Disaster Management |
 | **Category** | Software |
-| **Problem** | Reconstruction of Subsurface Ocean Temperature from Surface Satellite Observations |
+| **Event** | Smart India Hackathon 2026 |
+| **Problem Statement** | OceanEmbed - Satellite Embedding-Based Deep Learning Framework for Reconstruction of Subsurface Ocean Temperature from Surface Satellite Observations |
 
 ---
 
-## Problem
+## Problem Statement
 
 Satellite observations provide extensive coverage of ocean surface conditions, while direct subsurface measurements from ARGO floats and research vessels are sparse.
 
@@ -29,7 +30,7 @@ OceanEmbed aims to bridge this gap by learning the relationship between surface 
 
 ---
 
-## Solution
+## Proposed Solution
 
 OceanEmbed uses a **Convolutional Neural Network (CNN)** to reconstruct ocean temperature profiles from six surface variables:
 
@@ -115,6 +116,7 @@ The largest reconstruction errors occur around the thermocline region, where tem
 - Tailwind CSS
 - Leaflet
 - React Leaflet
+- Lucide React
 
 ### Backend
 
@@ -128,6 +130,7 @@ The largest reconstruction errors occur around the thermocline region, where tem
 - Python
 - Convolutional Neural Network (CNN)
 - Random Forest
+- Patch-based training
 - ARGO validation
 
 ### Data Sources
@@ -139,6 +142,79 @@ The largest reconstruction errors occur around the thermocline region, where tem
 ### Deployment
 
 - Render
+
+---
+
+## Study Region & Dataset
+
+The current Proof of Concept focuses on the **Bay of Bengal**.
+
+| Parameter | Configuration |
+|---|---|
+| **Latitude** | 10°N – 15°N |
+| **Longitude** | 80°E – 85°E |
+| **Time Period** | January – April 2023 |
+| **Depth Range** | 0 – 1000 meters |
+| **Standardized Depths** | 15 |
+
+### Input Variables
+
+| Variable | Description |
+|---|---|
+| SSS | Sea Surface Salinity |
+| SSH | Sea Surface Height |
+| U Current | East-West Ocean Current |
+| V Current | North-South Ocean Current |
+| U Wind | East-West Surface Wind |
+| V Wind | North-South Surface Wind |
+
+---
+
+## Independent ARGO Validation
+
+ARGO profiles provide independent subsurface observations for evaluating the reconstructed temperature profiles.
+
+For the final validation:
+
+- 33 ARGO float profiles were used.
+- The profiles were not used during model training.
+- Predictions were compared against observed subsurface temperature.
+- Errors were analyzed across depth.
+
+---
+
+## Web Platform
+
+The OceanEmbed frontend provides an interactive interface for exploring reconstructed subsurface temperature.
+
+Users can:
+
+1. Select a location on the map.
+2. Select a date.
+3. Request a reconstruction.
+4. Retrieve the corresponding prediction.
+5. Visualize the temperature profile from the surface to 1000 m.
+6. Compare the CNN prediction with GLORYS reference data.
+
+---
+
+## Backend
+
+The backend is built using **Node.js, Express.js, and MongoDB**.
+
+### API Endpoints
+
+```text
+GET /api/meta
+GET /api/predict
+GET /api/results
+```
+
+The backend supports prediction retrieval using geographic coordinates and dates.
+
+MongoDB geospatial indexing is used for efficient nearest-grid prediction lookup.
+
+The current platform contains approximately **259,440 precomputed prediction records**.
 
 ---
 
@@ -155,8 +231,8 @@ OceanEmbed/
 │   └── backend/
 ├── submission/
 ├── README.md
-├── SUBMISSION_GUIDE.md
 ├── package.json
+├── package-lock.json
 ├── tailwind.config.js
 └── vite.config.js
 ```
@@ -186,7 +262,7 @@ npm install
 cd ../..
 ```
 
-### 4. Configure Environment Variables
+### 4. Configure Frontend Environment
 
 Create:
 
@@ -200,24 +276,32 @@ Add:
 VITE_API_BASE_URL=http://localhost:5000
 ```
 
-For the backend, create:
+### 5. Configure Backend Environment
+
+Create:
 
 ```text
 src/backend/.env
 ```
 
-Use `src/backend/.env.example` as the reference for the required environment variables.
+Use:
 
-Do not commit secrets, passwords, API keys, database credentials, or JWT secrets.
+```text
+src/backend/.env.example
+```
 
-### 5. Start the Backend
+as the reference for the required environment variables.
+
+Do not commit passwords, API keys, database credentials, JWT secrets, or other sensitive information.
+
+### 6. Start the Backend
 
 ```bash
 cd src/backend
 npm run dev
 ```
 
-### 6. Start the Frontend
+### 7. Start the Frontend
 
 Open another terminal in the project root:
 
@@ -290,6 +374,19 @@ Potential applications include:
 - Additional oceanographic variables
 - Near-real-time reconstruction
 - Operational ocean monitoring integration
+
+---
+
+## Team
+
+| Team Member | Role |
+|---|---|
+| **MD Aftab Ansari** | Machine Learning / Frontend Development |
+| **Vanshika Goyal** | Machine Learning / PPT  |
+| **Anam Shoeb** | Frontend Development |
+| **Varidhi Solanki** | Frontend Development |
+| **Bhanwi Singh** | PPT |
+| **Vamika Arya** | Backend Development / Database |
 
 ---
 
