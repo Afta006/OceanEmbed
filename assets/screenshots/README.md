@@ -1,63 +1,32 @@
 # OceanEmbed Project Screenshots
 
-Store the important screenshots of the OceanEmbed platform in this folder.
+This folder contains screenshots of the OceanEmbed platform included as part of the SIH 2026 submission.
 
-## Recommended Screenshots
+## Contents
 
-The following screenshots are recommended for the SIH 2026 submission:
+### Platform Overview
 
-- OceanEmbed home / landing page
-- Live reconstruction demo
-- Bay of Bengal map and location selection
-- Manual latitude and longitude selection
-- Date selection and reconstruction workflow
-- Reconstructed subsurface temperature profile
-- CNN prediction vs GLORYS reference
-- Validation results
-- Impact / scalability section, if relevant
+- `01-home.png` — OceanEmbed homepage and overall platform interface.
+- `02-home-light-mode.png` — OceanEmbed homepage in light mode.
 
-## Naming Convention
+### Problem and Methodology
 
-Use clear and ordered names such as:
+- `03-the-problem.png` — Problem statement and motivation behind OceanEmbed.
+- `04-pipeline.png` — Complete OceanEmbed data processing and reconstruction pipeline.
+- `05-pipeline-acquire.png` — Data acquisition stage of the pipeline.
+- `06-pipeline-card-harmonize.png` — Data harmonization stage.
+- `07-pipeline-card-standardize-depth.png` — Standardization of the subsurface depth levels.
+- `08-pipeline-card-reconstruct.png` — Deep learning-based subsurface temperature reconstruction stage.
+- `09-pipeline-card-validate.png` — Model validation stage.
 
-- `01-home.png`
-- `02-live-demo.png`
-- `03-location-selection.png`
-- `04-reconstruction.png`
-- `05-temperature-profile.png`
-- `06-validation-results.png`
+### Results and Interactive Platform
 
-Use `.jpg` or `.webp` where appropriate.
+- `10-validation-results.png` — Model performance and validation results.
+- `11-live-demo.png` — Interactive live reconstruction demonstration.
+- `12-map.png` — Interactive Bay of Bengal map and location selection.
 
-## Adding Screenshots to README
+## Purpose
 
-Important screenshots can be displayed in the main `README.md` using relative paths.
+These screenshots provide a visual overview of the OceanEmbed platform, including its problem statement, data processing pipeline, reconstruction methodology, validation results, and interactive demonstration.
 
-For example:
-
-```markdown
-![OceanEmbed Home](assets/screenshots/01-home.png)
-```
-
-Another example:
-
-```markdown
-![OceanEmbed Live Demo](assets/screenshots/02-live-demo.png)
-```
-
-## Screenshot Guidelines
-
-Screenshots should clearly show the final working platform and important features.
-
-Avoid uploading:
-
-- Random development screenshots
-- Screenshots containing errors or unfinished UI
-- Screenshots containing passwords
-- API keys
-- Access tokens
-- Database credentials
-- Private information
-- Other confidential information
-
-Use screenshots from the final version of the OceanEmbed platform wherever possible.
+All screenshots represent the final version of the OceanEmbed platform prepared for the SIH 2026 submission.
