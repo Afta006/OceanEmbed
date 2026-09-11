@@ -382,11 +382,11 @@ Potential applications include:
 | Team Member | Role |
 |---|---|
 | **MD Aftab Ansari** | Machine Learning / Frontend Development |
-| **Vanshika Goyal** | Machine Learning / PPT  |
-| **Anam Shoeb** | Frontend Development |
+| **Vanshika Goyal** | Machine Learning / PPT / Video Voiceover |
+| **Anam Shoeb** | Frontend Development / PPT / Video Editing |
 | **Varidhi Solanki** | Frontend Development |
 | **Bhanwi Singh** | PPT |
-| **Vamika Arya** | Backend Development / Database |
+| **Vamika Arya** | Backend Development / Database / Video Voiceover |
 
 ---
 
