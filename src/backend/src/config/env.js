@@ -11,15 +11,15 @@ export const env = {
   mongoUri: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/sih_ocean_pipeline',
 
   jwt: {
-    secret: process.env.JWT_SECRET || 'dev_only_secret_change_me',
+    secret: process.env.JWT_SECRET,
     expiresIn: process.env.JWT_EXPIRES_IN || '15m',
-    refreshSecret: process.env.JWT_REFRESH_SECRET || 'dev_only_refresh_secret_change_me',
+    refreshSecret: process.env.JWT_REFRESH_SECRET,
     refreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '7d',
   },
 
   admin: {
     email: process.env.ADMIN_EMAIL || 'admin@example.com',
-    password: process.env.ADMIN_PASSWORD || 'ChangeMe123!',
+    password: process.env.ADMIN_PASSWORD,
     name: process.env.ADMIN_NAME || 'Admin',
   },
 
