@@ -4,7 +4,7 @@ The OceanEmbed demo video showcases the working platform and its core functional
 
 ## Demo Video Link
 
-`<PASTE_YOUTUBE_OR_GOOGLE_DRIVE_VIDEO_LINK_HERE>`
+`https://youtu.be/hxxk_Fr4KB8`
 
 ## What the Video Shows
 
